@@ -1,0 +1,191 @@
+---
+import { Image } from "astro:assets";
+import Linkedin from "../../public/icon/linkedin.svg";
+import Github from "../../public/icon/github.svg";
+import Iapp from "../../public/image/app.jpg";
+---
+
+<section
+  class="flex relative justify-center lg:overflow-visible w-full flex-wrap md:justify-evenly items-center h-[calc(100vh_-_64px)] 2xl:h-[calc(84vh_-_64px)]"
+>
+  <!-- left section -->
+  <div
+    class="flex justify-center lg:ps-40 relative z-20 flex-col gap-6 h-[calc(100vh_-_94px)] lg:w-1/2 xl:mt-10"
+  >
+    <Image
+      src={Iapp}
+      alt="Ismael Andres Parra Prato"
+      class="rounded-3xl w-48 mx-auto flex md:hidden"
+    />
+    <!-- greetings -->
+    <p
+      class="text-center md:text-left text-3xl font-semibold from-[#FF1CF7] to-[#b249f8] bg-clip-text text-transparent bg-gradient-to-b shadow-white"
+    >
+      Hello There!
+    </p>
+    <!-- introduce me -->
+    <div
+      class="text-center md:text-left text-white leading-8 md:leading-10 shadow-white"
+    >
+      <div class="">
+        <h1
+          class="tracking-tight inline font-semibold text-[2.1rem] lg:text-5xl"
+        >
+          I'm Ismael Parra
+        </h1>
+      </div>
+      <h1
+        class="tracking-tight inline font-semibold from-[#FF1CF7] to-[#b249f8] text-[2.1rem] lg:text-5xl bg-clip-text text-transparent bg-gradient-to-b"
+      >
+        UX/UI Developer <br class="sm:hidden md:flex" />& Designer
+      </h1>
+    </div>
+    <!-- call to action -->
+    <div class="flex flex-col md:flex-row items-center gap-4 md:mx-0">
+      <button
+        class="font-semibold px-6 md:w-auto w-full py-2 text-medium rounded-full"
+        role="button"
+        tabindex="0">Download CV</button
+      >
+      <button
+        class="font-semibold px-6 md:w-auto w-full py-2 text-medium rounded-full"
+        role="button"
+        tabindex="0">Hire me</button
+      >
+    </div>
+    <!-- social -->
+    <div class="flex flex-row items-center gap-4 mx-auto md:mx-0">
+      <a href="" class="hover:-translate-y-px">
+        <Image src={Linkedin} alt="Linkedin" />
+      </a>
+      <a href="" class="hover:-translate-y-px">
+        <Image src={Github} alt="Github" />
+      </a>
+    </div>
+  </div>
+  <!-- right section -->
+  <div
+    class="hidden md:flex justify-center items-center relative z-20 flex-col gap-6 lg:w-1/2 xl:mt-10"
+  >
+    <Image
+      src={Iapp}
+      alt="A bird."
+      class="rounded-3xl w-72 lg:w-80 mx-auto flex"
+    />
+  </div>
+</section>
+
+<style>
+  button {
+    color: #fff6fb;
+    background-color: transparent;
+    border: 2px solid #ffffff;
+    transition: 100ms;
+  }
+
+  button:hover {
+    box-shadow:
+      0 0 0px 1px #f11271,
+      0 0 10px 2px #7743db,
+      inset 0 0 0px 1px #f11271,
+      inset 0 0 30px 2px #7743db;
+    transform: translateY(0px);
+    text-shadow:
+      -1px -1px 0px #7743db,
+      1px 1px 0px #e94be8;
+  }
+
+  button:active {
+    box-shadow:
+      0 0 0px 1px #f11271,
+      0 0 25px 2px #7743db,
+      inset 0 0 0px 1px #f11271,
+      inset 0 0 30px 2px #7743db;
+    transform: translateY(1px);
+  }
+  button::after {
+    --move1: inset(50% 50% 50% 50%);
+    --move2: inset(31% 0 40% 0);
+    --move3: inset(39% 0 15% 0);
+    --move4: inset(45% 0 40% 0);
+    --move5: inset(45% 0 6% 0);
+    --move6: inset(14% 0 61% 0);
+    clip-path: var(--move1);
+    content: "Download CV";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: block;
+  }
+  button:nth-child(2)::after {
+    content: "Hire me";
+  }
+  button:hover::after {
+    animation: glitch_4011 1s;
+    text-shadow: 10 10px 10px black;
+    animation-timing-function: steps(2, end);
+    text-shadow:
+      -3px -3px 0px #7743db,
+      3px 3px 0px #e94be8;
+    background-color: transparent;
+  }
+
+  @keyframes glitch_4011 {
+    0% {
+      clip-path: var(--move1);
+      transform: translate(0px, -10px);
+    }
+
+    10% {
+      clip-path: var(--move2);
+      transform: translate(-10px, 10px);
+    }
+
+    20% {
+      clip-path: var(--move3);
+      transform: translate(10px, 0px);
+    }
+
+    30% {
+      clip-path: var(--move4);
+      transform: translate(-10px, 10px);
+    }
+
+    40% {
+      clip-path: var(--move5);
+      transform: translate(10px, -10px);
+    }
+
+    50% {
+      clip-path: var(--move6);
+      transform: translate(-10px, 10px);
+    }
+
+    60% {
+      clip-path: var(--move1);
+      transform: translate(10px, -10px);
+    }
+
+    70% {
+      clip-path: var(--move3);
+      transform: translate(-10px, 10px);
+    }
+
+    80% {
+      clip-path: var(--move2);
+      transform: translate(10px, -10px);
+    }
+
+    90% {
+      clip-path: var(--move4);
+      transform: translate(-10px, 10px);
+    }
+
+    100% {
+      clip-path: var(--move1);
+      transform: translate(0);
+    }
+  }
+</style>
