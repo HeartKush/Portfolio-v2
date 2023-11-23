@@ -1,0 +1,77 @@
+---
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Astro description" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>
+<style is:global>
+  :root {
+    --accent: 136, 58, 234;
+    --accent-light: 224, 204, 250;
+    --accent-dark: 49, 10, 101;
+    --accent-gradient: linear-gradient(
+      45deg,
+      rgb(var(--accent)),
+      rgb(var(--accent-light)) 30%,
+      white 60%
+    );
+  }
+  html {
+    font-family: "Segoe UI";
+    background: url("/image/bg-home.webp") no-repeat center center fixed;
+    background-size: cover;
+  }
+  code {
+    font-family:
+      Menlo,
+      Monaco,
+      Lucida Console,
+      Liberation Mono,
+      DejaVu Sans Mono,
+      Bitstream Vera Sans Mono,
+      Courier New,
+      monospace;
+  }
+</style>
+
+<style is:global lang="scss">
+  $pink: #db00ff;
+  $basic-purple: #7743db;
+  $yellow: rgb(161, 224, 13);
+  $gradient-purple: linear-gradient(90deg, #db00ff 1%, #8a8afffc 93.03%);
+
+  .text-pink {
+    color: $pink;
+  }
+  .text-purple {
+    color: $basic-purple;
+  }
+  .text-gradient-purple {
+    background: $gradient-purple;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .shadow-white {
+    text-shadow: 0px 0px 3px rgba(255, 255, 255, 0.3);
+  }
+  .border-outline {
+    outline: 1px;
+  }
+</style>
