@@ -1,16 +1,20 @@
 ---
-import Menu  from "../../public/icon/menu.svg";
+import { Image } from "astro:assets";
+import Menu from "../../public/icon/menu.svg";
+import Close from "../../public/icon/close.svg";
 ---
 
-<header class="py-2 flex items-center top-0 w-5/6 mx-auto justify-between">
+<header
+  class="py-2 flex items-center top-0 w-full px-4 md:px-0 md:w-5/6 mx-auto justify-between"
+>
   <a
     href="#"
     class="flex flex-grow basis-0 text-3xl font-bold tracking-tight from-[#FF1CF7] to-[#b249f8] bg-clip-text text-transparent bg-gradient-to-b"
     >UX/UI</a
   >
 
-  <nav class="hidden md:flex">
-    <ul class="flex text-slate-200 font-semibold ease-in-out">
+  <nav class="flex">
+    <ul class="hidden md:flex text-slate-200 font-semibold ease-in-out">
       <li class="px-4 py-1 hover:text-fuchsia-600 text-xl">
         <a href="">Home</a>
       </li>
@@ -21,9 +25,16 @@ import Menu  from "../../public/icon/menu.svg";
         <a href="">Skills</a>
       </li>
       <li class="px-4 py-1 hover:text-fuchsia-600 text-xl">
-        <a href="">Contact</a>
+        <a href="">Projects</a>
       </li>
+      <!-- Resto de tus elementos li -->
     </ul>
+    <Image
+      src={Menu}
+      alt="A bird."
+      id="menuIcon"
+      class="rounded-3xl w-10 mx-auto flex md:hidden transition-all duration-700 ease-in-out"
+    />
   </nav>
   <div
     id="menu-backdrop"
@@ -33,7 +44,61 @@ import Menu  from "../../public/icon/menu.svg";
   >
   </div>
 </header>
+
+<div
+  class="fixed hidden inset-0 z-50 transition-transform duration-700 ease-in-out overflow-hidden lg:hidden"
+  id="menuMobile"
+  role="dialog"
+  aria-modal="true"
+  data-headlessui-state="open"
+  aria-labelledby="headlessui-dialog-title-22"
+>
+  <div
+    class="absolute inset-0 bg-slate-900/25 backdrop-blur-lg transition-opacity opacity-100"
+  >
+  </div>
+  <div
+    class="fixed inset-0 flex items-start justify-end overflow-y-auto translate-x-100"
+  >
+    <div
+      class="min-h-full w-full flex justify-center items-center bg-transparent shadow-2xl ring-1 ring-black/10 transition"
+      id="headlessui-dialog-panel-21"
+      data-headlessui-state="open"
+    >
+      <button
+        type="button"
+        class="absolute right-6 top-5 flex h-8 w-8 items-center justify-center"
+        tabindex="0"
+      >
+        <Image
+          src={Close}
+          alt="A bird."
+          id="closeIcon"
+          class="close-icon menu-icon rounded-3xl w-10 mx-auto transition-transform duration-700 ease-in-out"
+        />
+      </button><nav
+        class="divide-y h-full divide-slate-900/10 text-4xl leading-7 text-slate-200"
+      >
+        <div class="px-8 py-6">
+          <div class="-my-2 items-start space-y-10 text-center">
+            <a class="block w-full py-2 font-semibold" href="#">Home</a><a
+              class="block w-full py-2 font-semibold"
+              href="#">About</a
+            ><a class="block w-full py-2 font-semibold" href="#">Skills</a><a
+              class="block w-full py-2 font-semibold"
+              href="#">Projects</a
+            >
+          </div>
+        </div>
+      </nav>
+    </div>
+  </div>
+</div>
+
 <script>
+  const menuIcon = document.getElementById("menuIcon") as HTMLHtmlElement;
+  const closeIcon = document.getElementById("closeIcon") as HTMLHtmlElement;
+  const menuMobile = document.getElementById("menuMobile") as HTMLElement;
   const listItem = document.querySelectorAll("li");
   const menuBackDrop = document.querySelector("#menu-backdrop") as HTMLElement;
 
@@ -55,4 +120,11 @@ import Menu  from "../../public/icon/menu.svg";
       menuBackDrop.style.visibility = "hidden";
     });
   });
+
+  function toggleIcons() {
+    menuMobile.classList.toggle("hidden");
+  }
+
+  menuIcon.addEventListener("click", toggleIcons);
+  closeIcon.addEventListener("click", toggleIcons);
 </script>
