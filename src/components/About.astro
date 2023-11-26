@@ -1,0 +1,184 @@
+---
+import { Image } from "astro:assets";
+import Arcade from "../../public/icon/arcade.svg";
+import Paw from "../../public/icon/paw.svg";
+import Pencil from "../../public/icon/pencil.svg";
+import Desktop from "../../public/icon/desktop.svg";
+import Mail from "../../public/icon/mail.svg";
+import Phone from "../../public/icon/phone.svg";
+import Location from "../../public/icon/location.svg";
+---
+
+<section class="flex gap-20 flex-col my-10">
+  <h2 class="text-slate-200 text-4xl lg:text-5xl text-center font-semibold">About me</h2>
+  <div class="flex flex-col md:flex-row md:justify-center gap-10">
+    <!-- left section -->
+    <div class="md:w-1/2 flex justify-center">
+      <div class="grid grid-rows-2 grid-cols-2 gap-12">
+        <picture class="flex flex-col justify-center items-center">
+          <Image src={Desktop} alt="Developer Icon" class="w-32 flex" />
+          <p class="text-slate-200 text-center text-xl">Developer</p>
+        </picture>
+        <picture class="flex flex-col justify-center items-center">
+          <Image src={Pencil} alt="Designer Icon" class="w-32 flex" />
+          <p class="text-slate-200 text-center text-xl">Designer</p>
+        </picture>
+
+        <picture class="flex flex-col justify-center items-center">
+          <Image src={Paw} alt="Pet Lover Icon" class="w-32 flex" />
+          <p class="text-slate-200 text-center text-xl">Pet Lover</p>
+        </picture>
+        <picture class="flex flex-col justify-center items-center">
+          <Image src={Arcade} alt="Arcade Icon" class="w-32 flex" />
+          <p class="text-slate-200 text-center text-xl">Gamer</p>
+        </picture>
+      </div>
+    </div>
+
+    <!-- right section -->
+    <div class="md:w-1/2 md:px-2 flex flex-col">
+      <p class="text-slate-200 text-lg">
+        I am passionate about web development and the creation of digital
+        experiences. My focus spans from application development to UX/UI
+        design, blending creativity with functionality. Additionally, as an
+        animal lover, I share my life with 6 adorable pets. In my free time, I
+        immerse myself in the exciting world of video games, exploring new
+        adventures.
+      </p>
+      <div class="border-b-2 border-slate-300 w-4/5 mt-5 mb-5"></div>
+      <div class="flex flex-wrap gap-x-10 lg:flex-col">
+        <picture class="flex flex-grow items-center text-slate-200 py-2">
+          <Image src={Location} alt="Developer Icon" class="flex w-8" />
+          <p class="ps-2">Bucaramanga, Santander</p>
+        </picture>
+        <picture class="flex items-center sm:flex-grow text-slate-200 py-2">
+          <Image src={Phone} alt="Developer Icon" class="flex w-8" />
+          <p class="ps-2">+57 3125358436</p>
+        </picture>
+        <picture class="flex items-center text-slate-200 py-2">
+          <Image src={Mail} alt="Developer Icon" class="flex w-8" />
+          <p class="ps-2">andresparra0905@gmail.com</p>
+        </picture>
+      </div>
+      <button
+        class="font-semibold py-2 w-full sm:w-1/2 mt-10 mx-auto md:mx-0 text-lg rounded-full"
+        >Hire me</button
+      >
+    </div>
+  </div>
+</section>
+
+<style>
+  button {
+    color: #fff6fb;
+    background-color: transparent;
+    border: 2px solid #ffffff;
+    transition: 100ms;
+  }
+
+  button:hover {
+    box-shadow:
+      0 0 0px 1px #f11271,
+      0 0 10px 2px #7743db,
+      inset 0 0 0px 1px #f11271,
+      inset 0 0 30px 2px #7743db;
+    transform: translateY(0px);
+    text-shadow:
+      -1px -1px 0px #7743db,
+      1px 1px 0px #e94be8;
+  }
+
+  button:active {
+    box-shadow:
+      0 0 0px 1px #f11271,
+      0 0 25px 2px #7743db,
+      inset 0 0 0px 1px #f11271,
+      inset 0 0 30px 2px #7743db;
+    transform: translateY(1px);
+  }
+  button::after {
+    --move1: inset(50% 50% 50% 50%);
+    --move2: inset(31% 0 40% 0);
+    --move3: inset(39% 0 15% 0);
+    --move4: inset(45% 0 40% 0);
+    --move5: inset(45% 0 6% 0);
+    --move6: inset(14% 0 61% 0);
+    clip-path: var(--move1);
+    content: "Hire me";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: block;
+  }
+  button:nth-child(2)::after {
+    content: "Hire me";
+  }
+  button:hover::after {
+    animation: glitch_4011 1s;
+    text-shadow: 10 10px 10px black;
+    animation-timing-function: steps(2, end);
+    text-shadow:
+      -3px -3px 0px #7743db,
+      3px 3px 0px #e94be8;
+    background-color: transparent;
+  }
+
+  @keyframes glitch_4011 {
+    0% {
+      clip-path: var(--move1);
+      transform: translate(0px, -10px);
+    }
+
+    10% {
+      clip-path: var(--move2);
+      transform: translate(-10px, 10px);
+    }
+
+    20% {
+      clip-path: var(--move3);
+      transform: translate(10px, 0px);
+    }
+
+    30% {
+      clip-path: var(--move4);
+      transform: translate(-10px, 10px);
+    }
+
+    40% {
+      clip-path: var(--move5);
+      transform: translate(10px, -10px);
+    }
+
+    50% {
+      clip-path: var(--move6);
+      transform: translate(-10px, 10px);
+    }
+
+    60% {
+      clip-path: var(--move1);
+      transform: translate(10px, -10px);
+    }
+
+    70% {
+      clip-path: var(--move3);
+      transform: translate(-10px, 10px);
+    }
+
+    80% {
+      clip-path: var(--move2);
+      transform: translate(10px, -10px);
+    }
+
+    90% {
+      clip-path: var(--move4);
+      transform: translate(-10px, 10px);
+    }
+
+    100% {
+      clip-path: var(--move1);
+      transform: translate(0);
+    }
+  }
+</style>

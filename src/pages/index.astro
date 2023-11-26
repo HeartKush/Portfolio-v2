@@ -3,12 +3,14 @@ import Layout from '../layouts/Layout.astro';
 import Navbar from "../components/Navbar.astro";
 import HeroSection from "../components/Hero.astro";
 import Card from '../components/Card.astro';
+import About from '../components/About.astro';
 ---
 
 <Layout title="IAPP">
  <Navbar />
-  <main class="slide-in-top container mx-auto max-w-7xl md:px-6 flex-grow">
+  <main class="slide-in-top px-10  mx-auto 2xl:w-4/5">
     <HeroSection />
+    <About />
   </main>
 </Layout>
 
