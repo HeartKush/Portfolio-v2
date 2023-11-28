@@ -6,6 +6,7 @@ import Iapp from "../../public/image/app.jpg";
 ---
 
 <section
+  id="home"
   class="flex relative justify-center lg:overflow-visible w-full flex-wrap md:justify-evenly items-center h-[calc(100vh_-_64px)]"
 >
   <!-- left section -->
@@ -42,23 +43,36 @@ import Iapp from "../../public/image/app.jpg";
     </div>
     <!-- call to action -->
     <div class="flex flex-col md:flex-row items-center gap-4 md:mx-0">
-      <button
-        class="font-semibold px-6 md:w-auto w-full py-2 text-lg rounded-full"
-        role="button"
-        tabindex="0">Download CV</button
+      <a href="../../public/document/CV.pdf" download="ismaelParraCV">
+        <button
+          class="font-semibold px-6 md:w-auto w-full py-2 text-lg rounded-full"
+          role="button">Download CV</button
+        >
+      </a>
+      <a
+        href="https://wa.me/573125358436?text=Hola%20vi%20tu%20portafolio%20y%20estoy%20interesado%20en%20tus%20servicios.%20Quisiera%20mas%20informaci%C3%B3n."
+        target="_blank"
       >
-      <button
-        class="font-semibold px-6 md:w-auto w-full py-2 text-lg rounded-full"
-        role="button"
-        tabindex="0">Hire me</button
-      >
+        <button
+          class="font-semibold px-6 md:w-auto w-full py-2 text-lg rounded-full"
+          role="button" id="hire">Hire me</button
+        >
+      </a>
     </div>
     <!-- social -->
     <div class="flex flex-row items-center gap-4 mx-auto md:mx-0">
-      <a href="" class="hover:-translate-y-px">
+      <a
+        href="https://www.linkedin.com/in/andresparra05/"
+        target="_blank"
+        class="hover:-translate-y-1 transition-all ease-in-out duration-300"
+      >
         <Image src={Linkedin} alt="Linkedin" />
       </a>
-      <a href="" class="hover:-translate-y-px">
+      <a
+        href="https://github.com/HeartKush"
+        target="_blank"
+        class="hover:-translate-y-1 transition-all ease-in-out duration-300"
+      >
         <Image src={Github} alt="Github" />
       </a>
     </div>
@@ -119,7 +133,7 @@ import Iapp from "../../public/image/app.jpg";
     bottom: 0;
     display: block;
   }
-  button:nth-child(2)::after {
+  #hire::after {
     content: "Hire me";
   }
   button:hover::after {
