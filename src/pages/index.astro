@@ -1,17 +1,24 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import Layout from "../layouts/Layout.astro";
 import Navbar from "../components/Navbar.astro";
 import HeroSection from "../components/Hero.astro";
-import Card from '../components/Card.astro';
-import About from '../components/About.astro';
-import Skills from '../components/Skills.astro';
-import Projects from '../components/Projects.astro';
-import Footer from '../components/Footer.astro';
+import Card from "../components/Card.astro";
+import About from "../components/About.astro";
+import Skills from "../components/Skills.astro";
+import Projects from "../components/Projects.astro";
+import Footer from "../components/Footer.astro";
 ---
 
 <Layout title="IAPP">
- <Navbar />
-  <main class="slide-in-top px-10  mx-auto 2xl:w-4/5">
+  <Navbar
+    links={[
+      { text: "Home", href: "#home", ariaLabel: "home" },
+      { text: "About", href: "#about", ariaLabel: "about me" },
+      { text: "Skills", href: "#skills", ariaLabel: "skills" },
+      { text: "Projects", href: "#projects", ariaLabel: "projects" },
+    ]}
+  />
+  <main class="slide-in-top px-10 mx-auto 2xl:w-4/5">
     <HeroSection />
     <About />
     <Skills />
@@ -19,5 +26,3 @@ import Footer from '../components/Footer.astro';
   </main>
   <Footer />
 </Layout>
-
-
