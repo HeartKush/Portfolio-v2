@@ -16,6 +16,9 @@ import Tailwind from "../../public/icon/tailwind.svg";
 import Figma from "../../public/icon/figma.svg";
 import Xd from "../../public/icon/xd.svg";
 import Ai from "../../public/icon/ai.svg";
+import WordPress from "../../public/icon/wordpress.svg";
+import Shopify from "../../public/icon/shopify.svg";
+import WooCommerce from "../../public/icon/woocommerce.svg";
 import PictureSkill from "./Picture-skill.astro";
 ---
 
@@ -44,5 +47,19 @@ import PictureSkill from "./Picture-skill.astro";
     <PictureSkill src={Figma} alt="Figma" label="Figma" />
     <PictureSkill src={Xd} alt="Adobe XD" label="Adobe XD" />
     <PictureSkill src={Ai} alt="Adobe Illustrator" label="Illustrator" />
+    <PictureSkill src={WordPress} alt="WordPress" label="WordPress" />
+    <PictureSkill src={Shopify} alt="Shopify" label="Shopify" />
+    <PictureSkill src={WooCommerce} alt="WooCommerce" label="WooCommerce" />
   </div>
+
 </section>
+
+<style>
+  .carousel {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow: scroll;
+    width: 50%;
+    scrollbar-gutter: unset;
+  }
+</style>
