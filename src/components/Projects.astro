@@ -1,5 +1,7 @@
 ---
 import GridCard from "../react-components/Gridcards";
+import Slider from "../react-components/Slider";
+
 
 const projectsObject = [
   {
@@ -101,5 +103,11 @@ const projectsObject = [
   <h2 class="text-slate-200 text-4xl lg:text-5xl text-center font-semibold">
     Projects
   </h2>
-  <GridCard client:visible projectsObject={projectsObject}  />
+  <div class="hidden md:flex">
+    <GridCard client:visible projectsObject={projectsObject}  />
+  </div>
+<div class="w-full flex md:hidden">
+  <Slider client:visible projectsObject={projectsObject} />
+</div>
+
 </section>

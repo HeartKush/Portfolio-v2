@@ -1,6 +1,7 @@
 import React from "react";
 import { Card, CardHeader,CardFooter, Image, Chip, Avatar } from "@nextui-org/react";
 
+
 const App = ({ projectsObject }) => {
     if (!projectsObject) {
         return <div>No hay proyectos disponibles</div>;
@@ -32,10 +33,6 @@ const App = ({ projectsObject }) => {
                     >
                         {project.title}
                     </Chip>
-
-                    <div className="flex gap-2">
-
-                    </div>
                 </CardHeader>
                 <Image
                     removeWrapper
@@ -43,7 +40,7 @@ const App = ({ projectsObject }) => {
                     className={`z-0 w-full h-full ${project.className}`}
                     src={project.src}
                 />
-                <CardFooter className="absolute bottom-0 z-10 gap-2 flex justify-end">
+                <CardFooter className="absolute bottom-0 z-10 gap-1 flex justify-end flex-wrap-reverse">
                     {project.tags.map((tag, index) => (
                         <Chip
                             key={index}
