@@ -54,6 +54,7 @@ const App = ({ projectsObject }) => {
                             }}
                             avatar={
                                 <Avatar
+                                    tabIndex={undefined}
                                     name={tag.name}
                                     src={tag.src}
                                     alt={tag.alt}

@@ -16,7 +16,7 @@ const App = ({ picturesObject }) => {
         sNames={{ tabList: "text-black" }}
       >
         {Object.entries(picturesObject).map(([tabKey, pictures], index) => (
-          <Tab className="text-lg" key={index} title={tabKey}>
+          <Tab className="text-lg" key={index}  title={tabKey}>
             <Card className="bg-slate-500/20 lg:w-4/6 mx-auto">
               <CardBody className="flex-row flex-wrap justify-evenly gap-5">
                 {pictures.map((picture, pictureIndex) => (

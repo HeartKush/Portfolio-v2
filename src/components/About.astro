@@ -9,7 +9,7 @@ import Location from "../../public/icon/location.svg";
 import { Image } from "astro:assets";
 ---
 
-<section id="about" class="flex gap-20 flex-col pt-32">
+<section id="about" class="flex gap-20 flex-col pt-32">er
   <h2 class="text-slate-200 text-4xl lg:text-5xl text-center font-semibold">
     About me
   </h2>
@@ -134,63 +134,6 @@ import { Image } from "astro:assets";
         -3px -3px 0 #7743db,
         3px 3px 0 #e94be8;
       background-color: transparent;
-    }
-
-    @keyframes glitch_4011 {
-      0% {
-        clip-path: var(--move1);
-        transform: translate(0px, -10px);
-      }
-
-      10% {
-        clip-path: var(--move2);
-        transform: translate(-10px, 10px);
-      }
-
-      20% {
-        clip-path: var(--move3);
-        transform: translate(10px, 0px);
-      }
-
-      30% {
-        clip-path: var(--move4);
-        transform: translate(-10px, 10px);
-      }
-
-      40% {
-        clip-path: var(--move5);
-        transform: translate(10px, -10px);
-      }
-
-      50% {
-        clip-path: var(--move6);
-        transform: translate(-10px, 10px);
-      }
-
-      60% {
-        clip-path: var(--move1);
-        transform: translate(10px, -10px);
-      }
-
-      70% {
-        clip-path: var(--move3);
-        transform: translate(-10px, 10px);
-      }
-
-      80% {
-        clip-path: var(--move2);
-        transform: translate(10px, -10px);
-      }
-
-      90% {
-        clip-path: var(--move4);
-        transform: translate(-10px, 10px);
-      }
-
-      100% {
-        clip-path: var(--move1);
-        transform: translate(0);
-      }
     }
   </style>
 </section>
