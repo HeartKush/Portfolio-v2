@@ -1,6 +1,7 @@
 import React from "react";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
+import 'swiper/css/pagination';
 import {Avatar, Card, CardFooter, CardHeader, Chip, Image} from "@nextui-org/react";
 import { Pagination } from 'swiper/modules';
 
