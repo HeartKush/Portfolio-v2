@@ -1,7 +1,4 @@
-import React from "react";
 import { Card, CardHeader,CardFooter, Image, Chip, Avatar } from "@nextui-org/react";
-
-
 const App = ({ projectsObject }) => {
     if (!projectsObject) {
         return <div>No hay proyectos disponibles</div>;

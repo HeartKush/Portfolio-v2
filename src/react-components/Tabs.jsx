@@ -1,5 +1,4 @@
 import { Tabs, Tab, Card, CardBody } from "@nextui-org/react";
-
 const App = ({ picturesObject }) => {
   return (
     <div className="flex w-full md:w-7/8 flex-col">

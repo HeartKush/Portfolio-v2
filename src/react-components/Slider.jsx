@@ -1,6 +1,6 @@
-import 'swiper/css';
-import 'swiper/css/pagination';
+import React from "react";
 import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
 import {Avatar, Card, CardFooter, CardHeader, Chip, Image} from "@nextui-org/react";
 import { Pagination } from 'swiper/modules';
 
@@ -9,17 +9,18 @@ const Slider = ({ projectsObject }) => {
         <Swiper
             pagination={true}
             modules={[Pagination]}
+            className="w-full"
             spaceBetween={50}
             slidesPerView={1}
-            onSlideChange={() => console.log('slide change')}
+            onSlideChange={() => console.log(projectsObject)}
             onSwiper={(swiper) => console.log(swiper)}
         >
             {projectsObject.map((project, index) => (
-                <SwiperSlide key={index}>
-                    <Card key={index} className={`shadow-md shadow-fuchsia-500/20 col-span-12 sm:col-span-4 h-[300px]`}  onPressEnd={() => window.open(project.href, '_blank')}>
+                <SwiperSlide key={`slide-${index}`}>
+                    <Card key={`card-${index}`} className={`shadow-md shadow-fuchsia-500/20 col-span-12 sm:col-span-4 h-[300px]`}  onPressEnd={() => window.open(project.href, '_blank')}>
                         <CardHeader className="absolute z-10 top-1 flex-col items-start gap-2">
                             <Chip
-                                key={index}
+                                key={`chip-${index}`}
                                 variant="bordered"
                                 classNames={{
                                     base: "border-none bg-slate-700/90",
@@ -36,9 +37,9 @@ const Slider = ({ projectsObject }) => {
                             src={project.src}
                         />
                         <CardFooter className="absolute bottom-0 z-10 gap-4 flex justify-end">
-                            {project.tags.map((tag) => (
-
+                            {project.tags.map((tag, tagIndex) => (
                                 <Avatar
+                                    key={`avatar-${index}-${tagIndex}`}
                                     isBordered color="secondary"
                                     size="sm"
                                     tabIndex={undefined}
