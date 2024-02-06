@@ -18,7 +18,7 @@ const Slider = ({ projectsObject }) => {
         >
             {projectsObject.map((project, index) => (
                 <SwiperSlide key={`slide-${index}`}>
-                    <Card key={`card-${index}`} className={`shadow-md shadow-fuchsia-500/20 col-span-12 sm:col-span-4 h-[300px]`}  onPressEnd={() => window.open(project.href, '_blank')}>
+                    <Card key={`card-${index}`} className={`shadow-md shadow-fuchsia-500/20 col-span-12 sm:col-span-4 h-[300px]`}  isPressable={true} onPressEnd={() => window.open(project.href, '_blank')}>
                         <CardHeader className="absolute z-10 top-1 flex-col items-start gap-2">
                             <Chip
                                 key={`chip-${index}`}
