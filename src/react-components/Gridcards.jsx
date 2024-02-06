@@ -1,5 +1,5 @@
 import React from "react";
-import { Card, CardHeader, Image, Chip, Avatar } from "@nextui-org/react";
+import { Card, CardHeader,CardFooter,Button, Image, Chip, Avatar } from "@nextui-org/react";
 
 const App = ({ projectsObject }) => {
     if (!projectsObject) {
@@ -7,44 +7,62 @@ const App = ({ projectsObject }) => {
     }
     const renderCard = (project, index) => {
         const cardSizes = [
-            "col-span-12 sm:col-span-4 h-[300px]",
-            "col-span-12 sm:col-span-4 h-[300px]",
-            "col-span-12 sm:col-span-4 h-[300px]",
             "w-full h-[300px] col-span-12 sm:col-span-5",
             "w-full h-[300px] col-span-12 sm:col-span-7",
+            "col-span-12 sm:col-span-4 h-[300px]",
+            "col-span-12 sm:col-span-4 h-[300px]",
+            "col-span-12 sm:col-span-4 h-[300px]",
+            "w-full h-[300px] col-span-12 sm:col-span-7",
+            "w-full h-[300px] col-span-12 sm:col-span-5",
+            "col-span-12 sm:col-span-4 h-[300px]",
+            "col-span-12 sm:col-span-4 h-[300px]",
+            "col-span-12 sm:col-span-4 h-[300px]",
         ];
         const cardSize = cardSizes[index % cardSizes.length];
         return (
             <Card key={index} className={`shadow-md shadow-fuchsia-500/20 ${cardSize}`}>
                 <CardHeader className="absolute z-10 top-1 flex-col items-start gap-2">
-                    <h4 className="text-white font-medium text-large">{project.title}</h4>
+                    <Chip
+                        key={index}
+                        variant="bordered"
+                        classNames={{
+                            base: "border-none bg-slate-700/90",
+                            content: "drop-shadow shadow-black text-white",
+                        }}
+                    >
+                        {project.title}
+                    </Chip>
+
                     <div className="flex gap-2">
-                        {project.tags.map((tag, index) => (
-                            <Chip
-                                key={index}
-                                variant="bordered"
-                                classNames={{
-                                    base: "border-small border-fuchsia-500 bg-fuchsia-700",
-                                    content: "drop-shadow shadow-black text-white",
-                                }}
-                                avatar={
-                                    <Avatar
-                                        name={tag.name}
-                                        src={tag.src}
-                                    />
-                                }
-                            >
-                                {tag.name}
-                            </Chip>
-                        ))}
+
                     </div>
                 </CardHeader>
                 <Image
                     removeWrapper
                     alt="Card background"
-                    className="z-0 w-full h-full object-cover"
+                    className={`z-0 w-full h-full ${project.className}`}
                     src={project.src}
                 />
+                <CardFooter className="absolute bottom-0 z-10 gap-2 flex justify-end">
+                    {project.tags.map((tag, index) => (
+                        <Chip
+                            key={index}
+                            variant="bordered"
+                            classNames={{
+                                base: "border-none bg-fuchsia-700/90",
+                                content: "drop-shadow shadow-black text-white",
+                            }}
+                            avatar={
+                                <Avatar
+                                    name={tag.name}
+                                    src={tag.src}
+                                />
+                            }
+                        >
+                            {tag.name}
+                        </Chip>
+                    ))}
+                </CardFooter>
             </Card>
     );
     };
