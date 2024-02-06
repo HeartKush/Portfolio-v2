@@ -1,6 +1,70 @@
 ---
 import Softwow from "../../public/image/softwow-desktop.webp";
-import Card from "../components/Card.astro";
+import GridCard from "../react-components/Gridcards";
+
+const projectsObject = [
+    {
+      title: "Softwow Landing Page",
+      body: "Modern and functional design to elevate your e-commerce presence.Explore the future of online commerce with Softwow",
+      src: "image/softwow.png",
+      href: "https://softwow.com.co/",
+      alt: "Softwow",
+      tags: [
+          {name:"Astro", alt: "Astro", src:"icon/astro.svg" },
+          {name:"React", alt: "React", src:"icon/react.svg" },
+          {name:"Tailwind", alt: "Tailwind", src:"icon/tailwind.svg" },
+      ],
+    },
+  {
+    title: "Softwow Landing Page",
+    body: "Modern and functional design to elevate your e-commerce presence.Explore the future of online commerce with Softwow",
+    src: "image/softwow.png",
+    href: "https://softwow.com.co/",
+    alt: "Softwow",
+    tags: [
+      {name:"Astro", alt: "Astro", src:"icon/astro.svg" },
+      {name:"React", alt: "React", src:"icon/react.svg" },
+      {name:"Tailwind", alt: "Tailwind", src:"icon/tailwind.svg" },
+    ],
+  },
+  {
+    title: "Softwow Landing Page",
+    body: "Modern and functional design to elevate your e-commerce presence.Explore the future of online commerce with Softwow",
+    src: "image/softwow.png",
+    href: "https://softwow.com.co/",
+    alt: "Softwow",
+    tags: [
+      {name:"Astro", alt: "Astro", src:"icon/astro.svg" },
+      {name:"React", alt: "React", src:"icon/react.svg" },
+      {name:"Tailwind", alt: "Tailwind", src:"icon/tailwind.svg" },
+    ],
+  },
+  {
+    title: "Softwow Landing Page",
+    body: "Modern and functional design to elevate your e-commerce presence.Explore the future of online commerce with Softwow",
+    src: "image/softwow.png",
+    href: "https://softwow.com.co/",
+    alt: "Softwow",
+    tags: [
+      {name:"Astro", alt: "Astro", src:"icon/astro.svg" },
+      {name:"React", alt: "React", src:"icon/react.svg" },
+      {name:"Tailwind", alt: "Tailwind", src:"icon/tailwind.svg" },
+    ],
+  },
+  {
+    title: "Softwow Landing Page",
+    body: "Modern and functional design to elevate your e-commerce presence.Explore the future of online commerce with Softwow",
+    src: "image/softwow.png",
+    href: "https://softwow.com.co/",
+    alt: "Softwow",
+    tags: [
+      {name:"Angular", alt: "Angular", src:"icon/angular.svg" },
+      {name:"React", alt: "React", src:"icon/react.svg" },
+      {name:"Tailwind", alt: "Tailwind", src:"icon/tailwind.svg" }
+    ],
+  },
+];
+
 ---
 
 <section id="projects" class="flex items-center gap-20 flex-col my-32">
@@ -8,27 +72,5 @@ import Card from "../components/Card.astro";
     Projects
   </h2>
 
-  <div class="grid grid-row-flow sm:grid-cols-2 lg:grid-cols-3 gap-20">
-    <Card
-      title="Softwow Landing Page"
-      body="Modern and functional design to elevate your e-commerce presence.Explore the future of online commerce with Softwow"
-      src={Softwow}
-      href="https://softwow.com.co/"
-      alt="Softwow"
-    />
-    <Card
-      title="Softwow Landing Page"
-      body="Modern and functional design to elevate your e-commerce presence.Explore the future of online commerce with Softwow"
-      src={Softwow}
-      href="https://softwow.com.co/"
-      alt="Softwow"
-    />
-    <Card
-      title="Softwow Landing Page"
-      body="Modern and functional design to elevate your e-commerce presence.Explore the future of online commerce with Softwow"
-      src={Softwow}
-      href="https://softwow.com.co/"
-      alt="Softwow"
-    />
-  </div>
+  <GridCard client:visible projectsObject={projectsObject}  />
 </section>

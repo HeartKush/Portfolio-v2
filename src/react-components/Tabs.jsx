@@ -10,7 +10,7 @@ const App = ({ picturesObject }) => {
         classNames={{
           tabList:
             "border-b border-divider flex-wrap mx-auto gap-0 bg-slate-500/10 w-full lg:w-fit lg:flex-nowrap",
-          cursor: "bg-fuchsia-500 ",
+          cursor: "bg-fuchsia-500",
           tab: "w-1/2 h-10",
         }}
         sNames={{ tabList: "text-black" }}
