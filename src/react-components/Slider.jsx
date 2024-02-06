@@ -18,17 +18,28 @@ const Slider = ({ projectsObject }) => {
         >
             {projectsObject.map((project, index) => (
                 <SwiperSlide key={`slide-${index}`}>
-                    <Card key={`card-${index}`} className={`shadow-md shadow-fuchsia-500/20 col-span-12 sm:col-span-4 h-[300px]`}  isPressable={true} onPressEnd={() => window.open(project.href, '_blank')}>
+                    <Card key={`card-${index}`} className={`shadow-md shadow-fuchsia-500/20 col-span-12 sm:col-span-4 h-[300px]`}  isPressable={false} onPressEnd={() => window.open(project.href, '_blank')}>
                         <CardHeader className="absolute z-10 top-1 flex-col items-start gap-2">
                             <Chip
                                 key={`chip-${index}`}
                                 variant="bordered"
                                 classNames={{
                                     base: "border-none bg-slate-700/90",
-                                    content: "drop-shadow shadow-black text-white",
+                                    content: "drop-shadow shadow-black text-white flex items-center",
                                 }}
                             >
-                                {project.title}
+                                <a className="flex items-center" href={project.href} target="_blank">
+                                    {project.title}
+                                    <Avatar
+                                        src={project.icon}
+                                        classNames={{
+                                            base: "bg-transparent",
+                                            img: "text-black/80 w-[20px]",
+                                        }}
+                                    />
+                                </a>
+
+
                             </Chip>
                         </CardHeader>
                         <Image
