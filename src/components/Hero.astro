@@ -1,5 +1,5 @@
 ---
-import { Image } from "astro:assets";
+import { Image } from "astro:assets"
 import Linkedin from "../../public/icon/linkedin.svg";
 import Github from "../../public/icon/github.svg";
 import Iapp from "../../public/image/app.webp";
@@ -99,21 +99,21 @@ import Iapp from "../../public/image/app.webp";
 
   button:hover {
     box-shadow:
-      0 0 0px 1px #f11271,
+      0 0 0 1px #f11271,
       0 0 10px 2px #7743db,
-      inset 0 0 0px 1px #f11271,
+      inset 0 0 0 1px #f11271,
       inset 0 0 30px 2px #7743db;
     transform: translateY(0px);
     text-shadow:
-      -1px -1px 0px #7743db,
-      1px 1px 0px #e94be8;
+      -1px -1px 0 #7743db,
+      1px 1px 0 #e94be8;
   }
 
   button:active {
     box-shadow:
-      0 0 0px 1px #f11271,
+      0 0 0 1px #f11271,
       0 0 25px 2px #7743db,
-      inset 0 0 0px 1px #f11271,
+      inset 0 0 0 1px #f11271,
       inset 0 0 30px 2px #7743db;
     transform: translateY(1px);
   }
@@ -138,11 +138,10 @@ import Iapp from "../../public/image/app.webp";
   }
   button:hover::after {
     animation: glitch_4011 1s;
-    text-shadow: 10 10px 10px black;
     animation-timing-function: steps(2, end);
     text-shadow:
-      -3px -3px 0px #7743db,
-      3px 3px 0px #e94be8;
+      -3px -3px 0 #7743db,
+      3px 3px 0 #e94be8;
     background-color: transparent;
   }
 
