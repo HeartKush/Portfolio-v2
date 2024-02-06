@@ -1,5 +1,4 @@
 ---
-import { Image } from "astro:assets";
 import Arcade from "../../public/icon/arcade.svg";
 import Paw from "../../public/icon/paw.svg";
 import Pencil from "../../public/icon/pencil.svg";
@@ -9,7 +8,7 @@ import Phone from "../../public/icon/phone.svg";
 import Location from "../../public/icon/location.svg";
 ---
 
-<section id="about" class="flex gap-20 flex-col my-10">
+<section id="about" class="flex gap-20 flex-col pt-32">
   <h2 class="text-slate-200 text-4xl lg:text-5xl text-center font-semibold">
     About me
   </h2>
@@ -90,21 +89,21 @@ import Location from "../../public/icon/location.svg";
 
     button:hover {
       box-shadow:
-        0 0 0px 1px #f11271,
+        0 0 0 1px #f11271,
         0 0 10px 2px #7743db,
-        inset 0 0 0px 1px #f11271,
+        inset 0 0 0 1px #f11271,
         inset 0 0 30px 2px #7743db;
       transform: translateY(0px);
       text-shadow:
-        -1px -1px 0px #7743db,
-        1px 1px 0px #e94be8;
+        -1px -1px 0 #7743db,
+        1px 1px 0 #e94be8;
     }
 
     button:active {
       box-shadow:
-        0 0 0px 1px #f11271,
+        0 0 0 1px #f11271,
         0 0 25px 2px #7743db,
-        inset 0 0 0px 1px #f11271,
+        inset 0 0 0 1px #f11271,
         inset 0 0 30px 2px #7743db;
       transform: translateY(1px);
     }
@@ -129,11 +128,10 @@ import Location from "../../public/icon/location.svg";
     }
     button:hover::after {
       animation: glitch_4011 1s;
-      text-shadow: 10 10px 10px black;
       animation-timing-function: steps(2, end);
       text-shadow:
-        -3px -3px 0px #7743db,
-        3px 3px 0px #e94be8;
+        -3px -3px 0 #7743db,
+        3px 3px 0 #e94be8;
       background-color: transparent;
     }
 

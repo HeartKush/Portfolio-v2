@@ -20,7 +20,7 @@ const App = ({ projectsObject }) => {
         ];
         const cardSize = cardSizes[index % cardSizes.length];
         return (
-            <Card key={index} className={`shadow-md shadow-fuchsia-500/20 ${cardSize}`}>
+            <Card key={index} className={`shadow-md shadow-fuchsia-500/20 ${cardSize}`} isPressable onPressEnd={() => window.open(project.href, '_blank')}>
                 <CardHeader className="absolute z-10 top-1 flex-col items-start gap-2">
                     <Chip
                         key={index}
@@ -39,7 +39,7 @@ const App = ({ projectsObject }) => {
                 </CardHeader>
                 <Image
                     removeWrapper
-                    alt="Card background"
+                    alt={project.alt}
                     className={`z-0 w-full h-full ${project.className}`}
                     src={project.src}
                 />
@@ -56,6 +56,7 @@ const App = ({ projectsObject }) => {
                                 <Avatar
                                     name={tag.name}
                                     src={tag.src}
+                                    alt={tag.alt}
                                 />
                             }
                         >
