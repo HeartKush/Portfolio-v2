@@ -1,5 +1,5 @@
 import React from "react";
-import { Card, CardHeader,CardFooter,Button, Image, Chip, Avatar } from "@nextui-org/react";
+import { Card, CardHeader,CardFooter, Image, Chip, Avatar } from "@nextui-org/react";
 
 const App = ({ projectsObject }) => {
     if (!projectsObject) {
